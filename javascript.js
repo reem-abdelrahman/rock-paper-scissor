@@ -42,9 +42,9 @@ function roundOne(computerSelection, playerSelection) {
 
 
 // input player's choice to the game   
-rockButton.addEventListener('click', ()=> game('rock'))
-scissorButton.addEventListener('click', ()=> game('scissor'))
-paperButton.addEventListener('click', ()=> game('paper'))
+rockButton.addEventListener('click', ()=> game('rock'));
+scissorButton.addEventListener('click', ()=> game('scissor'));
+paperButton.addEventListener('click', ()=> game('paper'));
     
  //restart game
 function restart(){

@@ -1,3 +1,10 @@
+// selectors
+let rockButton = document.getElementById("rockBtn");
+let scissorButton = document.getElementById("scissorBtn");
+let paperButton = document.getElementById("paperBtn");
+let compScore = document.getElementById("computer");
+let humanScore = document.getElementById("player");
+
 //scoreboard
 let playerScore = 0;
 let computerScore = 0;
@@ -18,11 +25,13 @@ function roundOne(computerSelection, playerSelection) {
     (computerSelection == "paper" && playerSelection == "rock") || 
     (computerSelection == "scissor" && playerSelection == "paper")) {
         computerScore++
+        compScore.textContent = `Computer: ${computerScore}`;
         console.log(computerWon);
     } else if ((computerSelection == "scissor" && playerSelection == "rock") || 
     (computerSelection == "paper" && playerSelection == "scissor") || 
     (computerSelection == "rock" && playerSelection == "paper")) {
         playerScore++
+        humanScore.textContent = `Player: ${playerScore}`;
         console.log(playerWon);
 
     } else {
@@ -30,11 +39,6 @@ function roundOne(computerSelection, playerSelection) {
     }
 }
 
-// selectors
-
-let rockButton = document.getElementById("rockBtn");
-let scissorButton = document.getElementById("scissorBtn");
-let paperButton = document.getElementById("paperBtn");
 
 
 // input player's choice to the game   
@@ -44,7 +48,10 @@ paperButton.addEventListener('click', ()=> game('paper'))
     
  //restart game
 function restart(){
-    playerScore == 0 && computerScore == 0;
+    playerScore = 0;
+    computerScore = 0;
+    compScore.textContent = `Computer: ${computerScore}`;
+    humanScore.textContent = `Player: ${playerScore}`;
 }    
 // check who's the winner
 function roundWinner() {
@@ -59,6 +66,6 @@ function roundWinner() {
 }
 
  function game(playerChoice) {
-    roundWinner();
     roundOne(computerPlay(), playerChoice);
+    roundWinner();
 }

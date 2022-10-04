@@ -19,16 +19,14 @@ function roundOne(computerSelection, playerSelection) {
     (computerSelection == "scissor" && playerSelection == "paper")) {
         computerScore++
         console.log(computerWon);
-        roundWinner()
     } else if ((computerSelection == "scissor" && playerSelection == "rock") || 
     (computerSelection == "paper" && playerSelection == "scissor") || 
     (computerSelection == "rock" && playerSelection == "paper")) {
         playerScore++
         console.log(playerWon);
-        roundWinner()
+
     } else {
         console.log("It's a tie");
-        roundWinner()
     }
 }
 
@@ -51,20 +49,16 @@ function restart(){
 // check who's the winner
 function roundWinner() {
     if (playerScore == 5 ) {
-        alert("player won")
+        alert("player is the WINNER")
         restart()
     } else if (computerScore == 5) {
-        alert("computer won")
+        alert("Computer is the WINNER")
         restart()
     }
 
 }
 
-/* function game(playerChoice) {
-    for(let i = 0; i < 5; i++) {
+ function game(playerChoice) {
+    roundWinner();
     roundOne(computerPlay(), playerChoice);
-    }
-    console.log("yay you played 5 rounds")
-    restart()
-    
-} */
+}
